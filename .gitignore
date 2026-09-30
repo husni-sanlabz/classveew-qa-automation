@@ -1,8 +1,14 @@
-
-# Playwright
+# Downloaded tools
 node_modules/
+
+# Playwright test output and reports
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Saved login sessions (they contain login cookies, so never upload them)
 /playwright/.auth/
+
+# Secrets (never upload)
+.env

@@ -29,9 +29,19 @@ In the VS Code terminal (Terminal > New Terminal), inside the project folder, ru
 
 Note: do NOT run `npm init playwright`. That command was only used once to create the project.
 
-## 5. Run the tests
+## 5. Add your test credentials
+1. In the main project folder, make a copy of `.env.example` and name the copy `.env`.
+2. Open `.env` and fill in the values after each `=` (no spaces, no quotes):
+   - `BASE_URL`: the test/staging environment address. NEVER production.
+   - Username and password for each test role account.
+3. Ask the team lead for the test account details. Never share them in chat, email, or code.
+
+`.env` is listed in `.gitignore`, so Git will never upload it. Check with `git status`: `.env` should NOT appear.
+
+## 6. Run the tests
     npx playwright test
 When the run finishes, an HTML report opens in your browser. Press Ctrl + C in the terminal to close it.
 
 ## Troubleshooting
 - **"running scripts is disabled on this system"** (Windows): this is a PowerShell security setting. Ask the team lead for help before changing it.
+- **`.env` shows up in `git status`**: do NOT commit. Check that `.gitignore` contains the line `.env`.
